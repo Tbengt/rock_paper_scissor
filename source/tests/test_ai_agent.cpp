@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
+#include "../ai_agent.h"
 
 TEST(agent, constructAnAgent) {
-  EXPECT_TRUE(false);
+        AiAgent agent;
+        EXPECT_TRUE(true);
 }
