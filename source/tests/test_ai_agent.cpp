@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "../ai_agent.h"
 
-TEST(agent, constructAnAgent) {
+TEST(agent, getNextMove) {
         AiAgent agent;
-        EXPECT_TRUE(true);
+        EXPECT_EQ(Move::rock, agent.nextMove());
 }

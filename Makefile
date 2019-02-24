@@ -72,8 +72,8 @@ build/gtest_main.a : build/gtest-all.o build/gtest_main.o
 #### new stuff ###
 
 
-#CODE = $(BUILD_DIR)/hand_hygiene.o $(BUILD_DIR)/scan_event_parser.o $(BUILD_DIR)/unique_user_id.o $(BUILD_DIR)/distance_estimator.o
-CODE_SRCS = $(CODE_DIR)/*.c $(CODE_DIR)/*.h
+CODE = $(BUILD_DIR)/ai_agent.o
+CODE_SRCS = $(CODE_DIR)/*.cpp $(CODE_DIR)/*.h
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
@@ -91,8 +91,8 @@ code : $(CODE)
 
 tests : $(TESTS)
 
-#$(BUILD_DIR)/hand_hygiene.o : $(CODE_SRCS)
-#	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(CODE_DIR)/hand_hygiene.c -o $@
+$(BUILD_DIR)/ai_agent.o : $(CODE_SRCS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(CODE_DIR)/ai_agent.cpp -o $@
 
 $(BUILD_DIR)/test_ai_agent.o : $(TEST_SRCS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/test_ai_agent.cpp -o $@
