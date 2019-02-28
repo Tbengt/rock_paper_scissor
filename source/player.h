@@ -3,9 +3,9 @@
 
 enum class Move {rock, paper, scissor};
 
-class AiAgent {
+class Player {
 public:
-        AiAgent();
+        Player();
         Move nextMove();
 private:
         std::mt19937 randomGenerator;

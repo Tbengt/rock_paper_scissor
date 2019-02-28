@@ -72,12 +72,12 @@ build/gtest_main.a : build/gtest-all.o build/gtest_main.o
 #### new stuff ###
 
 
-CODE = $(BUILD_DIR)/ai_agent.o
+CODE = $(BUILD_DIR)/player.o
 CODE_SRCS = $(CODE_DIR)/*.cpp $(CODE_DIR)/*.h
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = test_ai_agent test_tournament test_rock_paper_scissor_game
+TESTS = test_player test_tournament test_rock_paper_scissor_game
 TEST_SRCS = $(TEST_DIR)/*.cpp
 
 # House-keeping build targets.
@@ -91,13 +91,13 @@ code : $(CODE)
 
 tests : $(TESTS)
 
-$(BUILD_DIR)/ai_agent.o : $(CODE_SRCS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(CODE_DIR)/ai_agent.cpp -o $@
+$(BUILD_DIR)/player.o : $(CODE_SRCS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(CODE_DIR)/player.cpp -o $@
 
-$(BUILD_DIR)/test_ai_agent.o : $(TEST_SRCS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/test_ai_agent.cpp -o $@
+$(BUILD_DIR)/test_player.o : $(TEST_SRCS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/test_player.cpp -o $@
 
-test_ai_agent : $(BUILD_DIR)/gtest_main.a $(CODE) $(BUILD_DIR)/test_ai_agent.o
+test_player : $(BUILD_DIR)/gtest_main.a $(CODE) $(BUILD_DIR)/test_player.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $(BUILD_DIR)/$@
 
 $(BUILD_DIR)/test_tournament.o : $(TEST_SRCS)
