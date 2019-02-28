@@ -6,7 +6,6 @@
 
 class RockPaperScissorGame {
 public:
-        RockPaperScissorGame() = default;
         void addPlayers(Player player1, Player player2);
         void play();
         Player getWinner();
@@ -14,6 +13,7 @@ public:
 private:
         Player playerA;
         Player playerB;
+        Player winner;
 };
 
 
