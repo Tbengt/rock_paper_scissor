@@ -6,9 +6,18 @@ TEST(rock_paper_scissor, createGame) {
 }
 
 
-TEST(rock_paper_scissor, gameHasWinner) {
+TEST(rock_paper_scissor, addPlayers) {
         RockPaperScissorGame game;
         Player player1;
         Player player2;
         game.addPlayers(player1, player2);
+}
+
+TEST(rock_paper_scissor, getWinner) {
+        RockPaperScissorGame game;
+        Player player1;
+        Player player2;
+        game.addPlayers(player1, player2);
+        game.play();
+        game.getWinner();
 }
