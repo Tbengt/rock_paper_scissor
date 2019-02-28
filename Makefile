@@ -72,7 +72,7 @@ build/gtest_main.a : build/gtest-all.o build/gtest_main.o
 #### new stuff ###
 
 
-CODE = $(BUILD_DIR)/player.o
+CODE = $(BUILD_DIR)/player.o $(BUILD_DIR)/rock_paper_scissor_game.o
 CODE_SRCS = $(CODE_DIR)/*.cpp $(CODE_DIR)/*.h
 
 # All tests produced by this Makefile.  Remember to add new tests you
@@ -105,6 +105,9 @@ $(BUILD_DIR)/test_tournament.o : $(TEST_SRCS)
 
 test_tournament : $(BUILD_DIR)/gtest_main.a $(CODE) $(BUILD_DIR)/test_tournament.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $(BUILD_DIR)/$@
+
+$(BUILD_DIR)/rock_paper_scissor_game.o : $(CODE_SRCS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(CODE_DIR)/rock_paper_scissor_game.cpp -o $@
 
 $(BUILD_DIR)/test_rock_paper_scissor_game.o : $(TEST_SRCS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/test_rock_paper_scissor_game.cpp -o $@
