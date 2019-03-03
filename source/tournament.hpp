@@ -10,7 +10,6 @@ public:
         Tournament() = default;
         Player run(); /* Run the tournament and return the winner. */
         void addPlayer(Player participant);
-        Player getWinner(); /* Return the winner. */
 private:
         std::list<Player> participants;
 };

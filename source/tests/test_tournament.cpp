@@ -53,20 +53,22 @@ TEST(tournament, runTwoPlayerTournamentPlayerTwoWins) {
         EXPECT_EQ("Peter", tournament.run().name);
 }
 
-// TEST(tournament, runFourPlayerTournamentPlayerThreeWins) {
-//         Tournament tournament;
-//         Player p1{"Hanna"};
-//         Player p2{"Peter"};
-//         Player p3{"Berta"};
-//         Player p4{"Alvin"};
+TEST(tournament, runFourPlayerTournamentPlayerThreeWins) {
+        Tournament tournament;
+        Player p1{"Hanna"};
+        Player p2{"Peter"};
+        Player p3{"Berta"};
+        Player p4{"Alvin"};
 
-//         p1.setMoveGenerator([]{return Move::rock;});
-//         p2.setMoveGenerator([]{return Move::rock;});
-//         p3.setMoveGenerator([]{return Move::paper;});
-//         p4.setMoveGenerator([]{return Move::scissor;});
+        p1.setMoveGenerator([]{return Move::rock;});
+        p2.setMoveGenerator([]{return Move::rock;});
+        p3.setMoveGenerator([]{return Move::paper;});
+        p4.setMoveGenerator([]{return Move::scissor;});
         
-//         tournament.addPlayer(p1);
-//         tournament.addPlayer(p2);
+        tournament.addPlayer(p1);
+        tournament.addPlayer(p2);
+        tournament.addPlayer(p3);
+        tournament.addPlayer(p4);
 
-//         EXPECT_EQ("Peter", tournament.run().name);
-// }
+        EXPECT_EQ("Berta", tournament.run().name);
+}
