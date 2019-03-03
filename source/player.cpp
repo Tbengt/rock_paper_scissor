@@ -42,3 +42,7 @@ static Move getMoveFromNumber(int number) {
         default : return Move::rock;
         }
 }
+
+bool operator== (const Player &player1, const Player &player2) {
+        return player1.name == player2.name;
+}

@@ -12,6 +12,8 @@ public:
         Move nextMove();
         void setMoveGenerator(std::function<Move()> newMoveGenerator);
         std::string name = "Klas";
+        
+        friend bool operator== (const Player &player1, const Player &player2);
 private:
         std::mt19937 randomGenerator;
         std::function<Move()> moveGenerator = nullptr;

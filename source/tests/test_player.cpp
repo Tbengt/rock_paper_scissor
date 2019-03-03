@@ -29,3 +29,14 @@ TEST(player, setNameAtConstruction) {
         Player player{"Pelle"};
         EXPECT_EQ("Pelle", player.name);
 }
+
+TEST(player, comparisonOperatorEqual) {
+        Player player{"Patrik"};
+        EXPECT_TRUE(player == player);
+}
+
+TEST(player, comparisonOperatorNotEqual) {
+        Player player1{"Patrik"};
+        Player player2{"Gustav"};
+        EXPECT_FALSE(player1 == player2);
+}
