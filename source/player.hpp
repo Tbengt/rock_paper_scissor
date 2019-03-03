@@ -3,7 +3,7 @@
 #include <random>
 #include <functional>
 
-enum class Move {rock, paper, scissor};
+#include "rock_paper_scissor_game.hpp"
 
 class Player {
 public:
