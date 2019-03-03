@@ -1,35 +1,27 @@
 #include <gtest/gtest.h>
 #include "../tournament.hpp"
 
-TEST(tournament, createTournament) {
-        Tournament tournament;
-}
-
-TEST(tournament, addPlayerToTournament) {
-        Tournament tournament;
-        Player p1{"Hanna"};
-
-        tournament.addPlayer(p1);
-}
-
-TEST(tournament, addSeveralPlayersToTournament) {
+class TournamentTest : public ::testing::Test {
+protected:
         Tournament tournament;
         Player p1{"Hanna"};
         Player p2{"Elin"};
         Player p3{"Julia"};
         Player p4{"Rakel"};
+};
 
+TEST_F(TournamentTest, addPlayerToTournament) {
+        tournament.addPlayer(p1);
+}
+
+TEST_F(TournamentTest, addSeveralPlayersToTournament) {
         tournament.addPlayer(p1);
         tournament.addPlayer(p2);
         tournament.addPlayer(p3);
         tournament.addPlayer(p4);
 }
 
-TEST(tournament, runTwoPlayerTournamentPlayerOneWins) {
-        Tournament tournament;
-        Player p1{"Hanna"};
-        Player p2{"Peter"};
-
+TEST_F(TournamentTest, runTwoPlayerTournamentPlayerOneWins) {
         p1.setMoveGenerator([]{return Move::rock;});
         p2.setMoveGenerator([]{return Move::scissor;});
 
@@ -39,27 +31,17 @@ TEST(tournament, runTwoPlayerTournamentPlayerOneWins) {
         EXPECT_EQ(p1, tournament.run());
 }
 
-TEST(tournament, runTwoPlayerTournamentPlayerTwoWins) {
-        Tournament tournament;
-        Player p1{"Hanna"};
-        Player p2{"Peter"};
-
+TEST_F(TournamentTest, runTwoPlayerTournamentPlayerTwoWins) {
         p1.setMoveGenerator([]{return Move::rock;});
         p2.setMoveGenerator([]{return Move::paper;});
 
         tournament.addPlayer(p1);
         tournament.addPlayer(p2);
 
-        EXPECT_EQ("Peter", tournament.run().name);
+        EXPECT_EQ(p2, tournament.run());
 }
 
-TEST(tournament, runFourPlayerTournamentPlayerThreeWins) {
-        Tournament tournament;
-        Player p1{"Hanna"};
-        Player p2{"Peter"};
-        Player p3{"Berta"};
-        Player p4{"Alvin"};
-
+TEST_F(TournamentTest, runFourPlayerTournamentPlayerThreeWins) {
         p1.setMoveGenerator([]{return Move::rock;});
         p2.setMoveGenerator([]{return Move::rock;});
         p3.setMoveGenerator([]{return Move::paper;});
@@ -70,10 +52,9 @@ TEST(tournament, runFourPlayerTournamentPlayerThreeWins) {
         tournament.addPlayer(p3);
         tournament.addPlayer(p4);
 
-        EXPECT_EQ("Berta", tournament.run().name);
+        EXPECT_EQ(p3, tournament.run());
 }
 
-TEST(tournament, runTournamenNoPlayersThrowsException) {
-        Tournament tournament;
+TEST_F(TournamentTest, runTournamenNoPlayersThrowsException) {
         EXPECT_THROW(tournament.run(), NoPlayersException);
 }
