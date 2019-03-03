@@ -46,3 +46,7 @@ static Move getMoveFromNumber(int number) {
 bool operator== (const Player &player1, const Player &player2) {
         return player1.name == player2.name;
 }
+
+bool operator< (const Player &player1, const Player &player2) {
+        return player1.name < player2.name;
+}

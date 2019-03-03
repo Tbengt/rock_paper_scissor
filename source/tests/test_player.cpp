@@ -40,3 +40,9 @@ TEST(player, comparisonOperatorNotEqual) {
         Player player2{"Gustav"};
         EXPECT_FALSE(player1 == player2);
 }
+
+TEST(player, lessThanOperator) {
+        Player player1{"Patrik"};
+        Player player2{"Gustav"};
+        EXPECT_FALSE(player1 < player2);
+}
