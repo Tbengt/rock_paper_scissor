@@ -1,4 +1,4 @@
-#include "player.h"
+#include "player.hpp"
 
 static Move getMoveFromNumber(int number);
 

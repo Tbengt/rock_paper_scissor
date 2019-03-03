@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../player.h"
+#include "../player.hpp"
 #include <set>
 #include <iostream>
 

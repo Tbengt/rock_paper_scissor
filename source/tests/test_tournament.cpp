@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../tournament.h"
+#include "../tournament.hpp"
 
 TEST(tournament, createTournament) {
         Tournament tournament;

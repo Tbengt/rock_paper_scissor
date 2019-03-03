@@ -1,7 +1,7 @@
 /* A tournament consists of several rock player scissor players (agents). When the tournament is run
    it is determined which player won. */
 
-#include "player.h"
+#include "player.hpp"
 
 class Tournament {
 public:

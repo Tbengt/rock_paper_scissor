@@ -1,4 +1,4 @@
-#include "rock_paper_scissor_game.h"
+#include "rock_paper_scissor_game.hpp"
 
 void RockPaperScissorGame::addPlayers(Player player1, Player player2) {
         playerA = player1;

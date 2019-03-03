@@ -2,7 +2,9 @@
    show either a rock, paper or scissor. Rock beats scissor, paper beats rock and scissor
    beats paper. The two players keep showing either rock, scissor or paper until one player
    has won the round. */
-#include "player.h"
+#include "player.hpp"
+
+enum class Winner {player1, player2, draw}
 
 class RockPaperScissorGame {
 public:

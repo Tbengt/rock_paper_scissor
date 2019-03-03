@@ -73,7 +73,7 @@ build/gtest_main.a : build/gtest-all.o build/gtest_main.o
 
 
 CODE = $(BUILD_DIR)/player.o $(BUILD_DIR)/rock_paper_scissor_game.o
-CODE_SRCS = $(CODE_DIR)/*.cpp $(CODE_DIR)/*.h
+CODE_SRCS = $(CODE_DIR)/*.cpp $(CODE_DIR)/*.hpp
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
