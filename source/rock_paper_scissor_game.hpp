@@ -9,6 +9,7 @@ enum class Move {rock, paper, scissor};
 
 class RockPaperScissorGame {
 public:
+        /* Given two functions that generate moves this function returns who won the game. */
         static Winner play(std::function<Move()> player1, std::function<Move()> player2);
 };
 

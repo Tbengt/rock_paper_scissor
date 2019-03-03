@@ -11,7 +11,7 @@ class Tournament {
 public:
         Tournament() = default;
         Player run(); /* Run the tournament and return the winner. */
-        void addPlayer(Player participant);
+        void addPlayer(Player participant); /* Add a player to the tournament. */
 
 private:
         std::list<Player> participants;
