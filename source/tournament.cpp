@@ -13,6 +13,10 @@ void Tournament::addPlayer(Player participant) {
 
 Player Tournament::run() {
 
+        if (participants.empty()) {
+                throw NoPlayersException();
+        }
+        
         ScoreCard scoreCard;
         for (auto& player : participants) {
                 scoreCard.insert(std::make_pair(player, 0));

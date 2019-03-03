@@ -36,7 +36,7 @@ TEST(tournament, runTwoPlayerTournamentPlayerOneWins) {
         tournament.addPlayer(p1);
         tournament.addPlayer(p2);
 
-        EXPECT_EQ("Hanna", tournament.run().name);
+        EXPECT_EQ(p1, tournament.run());
 }
 
 TEST(tournament, runTwoPlayerTournamentPlayerTwoWins) {
@@ -71,4 +71,9 @@ TEST(tournament, runFourPlayerTournamentPlayerThreeWins) {
         tournament.addPlayer(p4);
 
         EXPECT_EQ("Berta", tournament.run().name);
+}
+
+TEST(tournament, runTournamenNoPlayersThrowsException) {
+        Tournament tournament;
+        EXPECT_THROW(tournament.run(), NoPlayersException);
 }
