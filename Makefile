@@ -77,7 +77,7 @@ CODE_SRCS = $(CODE_DIR)/*.cpp $(CODE_DIR)/*.hpp
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = test_player test_tournament test_rock_paper_scissor_game
+TESTS = test_player test_tournament test_rock_paper_scissor_game example
 TEST_SRCS = $(TEST_DIR)/*.cpp
 
 # House-keeping build targets.
@@ -90,6 +90,8 @@ clean :
 code : $(CODE)
 
 tests : $(TESTS)
+
+example : example
 
 $(BUILD_DIR)/player.o : $(CODE_SRCS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(CODE_DIR)/player.cpp -o $@
@@ -118,3 +120,8 @@ $(BUILD_DIR)/test_rock_paper_scissor_game.o : $(TEST_SRCS)
 test_rock_paper_scissor_game : $(BUILD_DIR)/gtest_main.a $(CODE) $(BUILD_DIR)/test_rock_paper_scissor_game.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $(BUILD_DIR)/$@
 
+$(BUILD_DIR)/example.o : $(CODE_SRCS) $(TEST_SRCS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/example.cpp -o $@
+
+example : $(BUILD_DIR)/example.o $(CODE)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $(BUILD_DIR)/$@
