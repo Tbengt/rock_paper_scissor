@@ -4,18 +4,11 @@
    has won the round. */
 #include "player.hpp"
 
-enum class Winner {player1, player2, draw}
+enum class Winner {player1, player2, draw};
 
 class RockPaperScissorGame {
 public:
-        void addPlayers(Player player1, Player player2);
-        void play();
-        Player getWinner();
-
-private:
-        Player playerA;
-        Player playerB;
-        Player winner;
+        static Winner play(std::function<Move()> player1, std::function<Move()> player2);
 };
 
 
