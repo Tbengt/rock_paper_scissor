@@ -21,8 +21,7 @@ and move them as we progress through the lesson. This is the plan I have used:
 * Sprint 3
 * Lesson over
 
-The input to the sprint exercises are taken from the following **backlog**. All the
-tasks should be implemented in the main method.
+The input to the sprint exercises are taken from the following **backlog**. I suggest writing the tasks out on post-its and pasting them on a white board.
 
 1. Create a player called "Sara" and print the name of the player.
 2. Create a tournament. Add two players to the tournament. Run the tournament and print the winner.
