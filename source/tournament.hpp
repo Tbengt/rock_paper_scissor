@@ -1,3 +1,7 @@
+#ifndef ROCK_PAPER_SCISSOR_TOURNAMENT_H
+#define ROCK_PAPER_SCISSOR_TOURNAMENT_H
+
+
 /* A tournament consists of several rock player scissor players. When the tournament is run
    it is determined which player won. The tournament is a round robin tournament where
    each player faces every other player twice. */
@@ -16,3 +20,5 @@ public:
 private:
         std::list<Player> participants;
 };
+
+#endif /* header guard */

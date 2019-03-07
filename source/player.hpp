@@ -1,3 +1,6 @@
+#ifndef ROCK_PAPER_SCISSOR_PLAYER_H
+#define ROCK_PAPER_SCISSOR_PLAYER_H
+
 /* An AI agent can play games. This AI agent can play rock paper scissors. */
 
 #include <random>
@@ -26,4 +29,4 @@ private:
         Move randomMoveGenerator();
 };
 
-
+#endif /* header guard */
